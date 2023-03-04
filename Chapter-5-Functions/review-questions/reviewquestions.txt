@@ -1,0 +1,41 @@
+1. A group of statements that exist within a program for the purpose of performing a specific task is a/an _____
+a.block
+b.parameter
+c.function
+d.expression
+
+c. function.
+
+2. A design technique that helps to reduce the duplication of code within a program and is a benefit of
+using a function is ______
+
+a. code reuse
+b. divide and conquer
+c. debugging
+d. facilitation of teamwork
+
+3. the first line of a function definition is known as A
+a. body
+b. introduction
+c. initialization
+d. header
+
+d. header
+
+4. You ___ the function to execute it.
+
+a. define
+b. call
+c. import
+d. export
+
+b. call
+
+5. a design technique that programmers use to break down an algorithm into functions is known as _____
+
+a. top-down design
+b. code simplification
+c. code refactoring
+d. hierarcial subtasking
+
+a. top down design.

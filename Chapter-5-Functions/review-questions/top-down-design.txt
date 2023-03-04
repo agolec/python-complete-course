@@ -1,0 +1,11 @@
+top down design breaks a program into it's functions.
+
+The overall task that the program is to perform is broken down into a series of subtasks.
+
+Each of the subtasks is examined to determine whether it can be further broken down into more subtasks.
+This step is repeated until no more subtasks can be identified.
+
+Once all the subtasks have been identified, they are written into code.
+
+This process is  called top down design because the programmer/s begin by looking at the top-most level 
+of tasks that must be performed and then breaks those tasks into lower levels of subtasks.

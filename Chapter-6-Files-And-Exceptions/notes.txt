@@ -1,0 +1,61 @@
+three things to do with files used in python
+
+1. open the file - opening the file creates a connection between your program and the file. Opening an 
+OUTPUT FILE usually creates a file on the disk that allows the program to write data to it.
+
+Opening an INPUT FILE allows the program to read data from the file.
+
+2. process the file - In this step data is either written to the file (if it is an output file),
+or it is read from the file (if it is an input file).
+3. close the file so the system is no longer using it. - When the program is finished using it, the file must
+be closed. Closing it disconnects it from the program.
+
+                        Types of files
+
+Generally there are two types: Text Files and Binary Files.
+
+Text Files store data as plaintext that can be seen when the user opens the file in a program like Notepad.
+These text files store data using a scheme like ASCII or Unicode.
+
+Binary files store data that has not been converted into text, and therefore cannot be seen if the file
+is opened up in a notepad program or other kind of text editor.
+
+                        File Access Methods
+
+There are two ways to access data in a file: Sequential access and random access.
+
+Sequential Access Files will read data from the start of the file all the way to the end in sequence; as a
+consequence, if you want to read data at the end of the file, it has to read everything else contained in it
+first in sequence. Similar to a cassette tape or VHS or film strip.
+
+Direct Access Files allow you to access data in any order randomly - it's also known as a Random Access File.
+You can jump directly to whatever piece of data you want. Similar to a MP3 or CD.
+
+                        Filenames and objects.
+
+Filenames are usually named based off the operating system your computer uses. they'll suffix Filenames
+with .txt or .csv or .doc at the end of a file, and that specifies the extension of the file.
+
+In order for your file to work with the computer's disk, it must make a file object in memory.
+A File Object is an object associated with a specific file and provides a way for the program to work
+with that file.
+
+In python we might do this with the following statement to open a file:
+
+file_variable = open(filename, mode)
+
+file_variable is the variable name used to manipulate and reference the File Object.
+filename is a string specifying the name of the file.
+mode is the string specifying the mode (read,write, open) that the file will be opened for.
+
+file entries are delimited by newline characters. You'll need to enter + '\n' to them to separate them.
+
+When assigning lines of a file to a variable, you will want to trim the '\n' character out
+
+use the .rstrip('\n') statement for this.
+
+                        Working with undetermined number of entries in a file
+
+Python's readline() method returns '' which is an empty string when it has attempted to read past the end
+of a file. This makes it possible to write a while loop to process an entire file and find the end of file
+marker for that file.
