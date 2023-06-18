@@ -1,0 +1,66 @@
+when your class is in another file you import it as a module.
+
+You will end up with syntax '<module_name>.<Class_Name>()',
+without the <> symbols.
+
+ex:
+
+import coin
+
+a_coin_instance = coin.Coin()
+
+
+                    HIDING ATTRIBUTES IN AN OBJECT (Making attributes private)
+
+An object's data attributes should be private, so that only the object can access them.
+
+Why? We do this so that we can protect the object's data attributes from accidental corruption.
+
+If we consider the Coin class, here:
+
+class Coin:
+
+    # The __init__ method initializes the sideup attribute with the value 'Heads'.
+    def __init__(self):
+        self.sideup = 'Heads'
+        self.number_of_tosses = 0
+
+    #   The toss method generates a number (either 0 or 1), and
+    #   assigns the sideup attribute with 'Heads' or 'Tails' respectively.
+    def toss(self):
+        if random.randint(0, 1) == 0:
+            self.sideup = 'Heads'
+        else:
+            self.sideup = 'Tails'
+
+    def increment(self):
+        self.number_of_tosses += 1
+
+    def get_sideup(self):
+        return self.sideup
+
+    def get_number_of_tosses(self):
+        return self.number_of_tosses
+
+We have attributes named 'sideup'.
+In our main class that uses Coin(), if we create a coin object, we can call the 'sideup' attribute
+directly from the object, similar to a C# property.
+
+my_coin = Coin();
+my_coin.sideup = 'Heads'
+
+This causes security problems since we're able to modify our object, 
+rather than calling Coin class methods.
+
+In order to hide these attiributes, we prefix __ on their names.
+Refer back to the finalized 'coin.py' file for this.
+
+                        MODULES
+
+A module is the name you give your .py file.
+
+This is what you will refer to a class as when you use an import statement.
+
+coin.py is the module that the Coin class lives in.
+
+When we define the Coin class, we give it the uppercase C.
