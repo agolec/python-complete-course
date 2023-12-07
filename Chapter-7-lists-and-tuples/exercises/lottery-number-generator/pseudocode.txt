@@ -1,9 +1,11 @@
-DISPLAY TEXT "this program generates a seven digit lottery number"
-INIT seven element LIST containint LOTTERY NUMBERS to null/zero number values.
-FOR each element in LOTTERY NUMBERS LIST, CALCULATE a random number and place it in CURRENT element
-    INCREMENT element
-REPEAT 3-4 until each element in LOTTERY NUMBERS LIST has been CALCULATED and ASSIGNED to element.
+DEFINE main:
+    DISPLAY TEXT "this program generates a seven digit lottery number"
+    INIT seven element LIST containint LOTTERY NUMBERS to null/zero number values.
+    FOR each element in LOTTERY NUMBERS LIST, CALCULATE a random number and place it in CURRENT element
+        INCREMENT element
+    REPEAT 3-4 until each element in LOTTERY NUMBERS LIST has been CALCULATED and ASSIGNED to element.
 
-FOR each element in LOTTERY NUMBERS LIST, DISPLAY CURRENT element
-    INCREMENT element
-REPEAT 7-8 until all elements in LOTTERY NUMBERS LIST has been DISPLAYED.
+    FOR each element in LOTTERY NUMBERS LIST, DISPLAY CURRENT element
+        INCREMENT element
+    REPEAT 7-8 until all elements in LOTTERY NUMBERS LIST has been DISPLAYED.
+CALL main:
