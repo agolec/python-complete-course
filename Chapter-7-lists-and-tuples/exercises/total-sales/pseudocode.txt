@@ -1,0 +1,27 @@
+Design a program that asks the user to enter a store's sales for each day of the week.
+The amounts should be stored in a list. Use a loop to calculate the total sales for the week
+and display the results.
+
+TOTAL SALES PSEUDOCODE
+
+SET DAYS_OF_WEEK = 7
+SET SALES_FOR_WEEK.SIZE = DAYS_OF_WEEK
+SET input_for_day
+SET total_sales = 0
+
+DISPLAY PROMPT "Enter the total sales for the week"
+FOR DAY in SALES_ARRAY:
+    DISPLAY "Enter total sales for day DAY"
+    USER ENTER input_for_day for current DAY
+        VALIDATE input_for_day is NOT negative
+INCREMENT DAY
+REPEAT UNTIL DAY >= DAYS_OF_WEEK
+
+DISPLAY "Calculating the sales for the week
+FOR DAY in SALES_ARRAY
+    CALCULATE total_sales
+DISPLAY "Total Sales is $" + total_sales
+
+
+
+        
