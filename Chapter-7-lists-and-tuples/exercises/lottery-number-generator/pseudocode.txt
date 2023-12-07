@@ -1,10 +1,17 @@
 DEFINE main:
     DISPLAY TEXT "this program generates a seven digit lottery number"
-    INIT seven element LIST containint LOTTERY NUMBERS to null/zero number values.
-    FOR each element in LOTTERY NUMBERS LIST, CALCULATE a random number and place it in CURRENT element
+    INIT SIZE_OF_LOTTERY_NUMBERS = 7
+    INIT LIST for LOTTERY NUMBERS to SIZE_OF_LOTTERY_NUMBERS. Assign each element = 0.
+    
+    generate_lottery_number
+    display_lottery_number
+
+DEFINE generate_lottery_number:
+    FOR each element in RANGE of SEVEN DIGITS, CALCULATE a random number and place it in CURRENT element of LOTTERY NUMBERS LIST
         INCREMENT element
     REPEAT 3-4 until each element in LOTTERY NUMBERS LIST has been CALCULATED and ASSIGNED to element.
 
+DEFINE display_lottery_number:
     FOR each element in LOTTERY NUMBERS LIST, DISPLAY CURRENT element
         INCREMENT element
     REPEAT 7-8 until all elements in LOTTERY NUMBERS LIST has been DISPLAYED.
