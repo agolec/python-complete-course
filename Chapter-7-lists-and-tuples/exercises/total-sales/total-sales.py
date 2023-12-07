@@ -22,6 +22,3 @@ for sales_for_day in range(DAYS_IN_WEEK):
     total_sales += sales_for_week[sales_for_day]
     print("day :" + str(sales_for_day + 1) + ": " + str(total_sales))
 print("total sales for week are $" + str(total_sales))
-
-
-
