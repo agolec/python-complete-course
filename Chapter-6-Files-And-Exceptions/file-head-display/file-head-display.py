@@ -1,15 +1,15 @@
-# Write a program that asks the user to enter the name of a file.
-
-# The program should then display the first five lines of the record's contents.
-
-# If the file contains less than 5 lines, it should display the entire file.
+'''
+Write a program that asks the user to enter the name of a file.
+The program should then display the first five lines of the record's contents.
+If the file contains less than 5 lines, it should display the entire file.
+'''
 
 import os
 
 
 def main():
     try:
-        number_of_lines_to_display = 5
+        NUMBER_OF_LINES_TO_DISPLAY = 5
         filename = input(
             'Enter the name of a file and I will show the first 5 records of it.')
 
@@ -18,23 +18,27 @@ def main():
 
         print('trying to open directory: ' +
               currentworkingdirectory + filename)
+        file_path = currentworkingdirectory + filename
 
-        inputfile = open(currentworkingdirectory + filename, 'r')
+        inputfile = open(file_path, 'r')
 
         line = inputfile.readline()
         line = line.rstrip('\n')
 
-        for count in range(1, number_of_lines_to_display + 1):
-            if line != '':
+        for count in range(1, NUMBER_OF_LINES_TO_DISPLAY + 1):
+            if not line.isspace():
                 print(line)
                 line = inputfile.readline()
                 line = line.rstrip('\n')
             else:
-                break
+                inputfile.readline()
+                continue
+        print('closing file')
+        inputfile.close()
     except IOError:
         print("An error occurred trying to read the file.")
-    print('closing file')
-    inputfile.close()
+
+
 
 
 main()
