@@ -1,0 +1,8 @@
+Write a function that accepts two arguments:
+
+1: a list, and
+2: a number, n.
+
+Assume the list contains numbers.
+
+The fuction should display all the numbers in the list that are greater than the number n.
