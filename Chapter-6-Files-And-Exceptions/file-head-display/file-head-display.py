@@ -22,17 +22,31 @@ def main():
 
         inputfile = open(file_path, 'r')
 
+        line_count = open(file_path, 'r')
+        line_count = len(line_count.readlines())
+
         line = inputfile.readline()
         line = line.rstrip('\n')
 
-        for count in range(1, NUMBER_OF_LINES_TO_DISPLAY + 1):
-            if not line.isspace():
-                print(line)
-                line = inputfile.readline()
-                line = line.rstrip('\n')
-            else:
-                inputfile.readline()
-                continue
+        if(line_count > 5):
+
+            for count in range(1, NUMBER_OF_LINES_TO_DISPLAY + 1):
+                if not line.isspace():
+                    print(line)
+                    line = inputfile.readline()
+                    line = line.rstrip('\n')
+                else:
+                    inputfile.readline()
+                    continue
+        else:
+            for count in range(1,line_count + 1):
+                if not line.isspace():
+                    print(line)
+                    line = inputfile.readline()
+                    line = line.rstrip('\n')
+                else:
+                    inputfile.readline()
+                    continue
         print('closing file')
         inputfile.close()
     except IOError:
