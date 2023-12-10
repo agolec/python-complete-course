@@ -5,7 +5,10 @@ optionsForContinue = ['Y','y']
 while keepGoing:
     try:
         userKeyInput = input('Enter a key and I will try to find it')
-        print(phonebook[userKeyInput])
+        if(userKeyInput not in phonebook):
+            print('key \'' + userKeyInput + '\' not found in dictionary')
+        else:
+            print(phonebook[userKeyInput])
         charInput = input('Keep going? y/n: ')
         if(charInput not in optionsForContinue):
             keepGoing = False
