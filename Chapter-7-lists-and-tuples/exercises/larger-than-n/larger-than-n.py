@@ -1,5 +1,5 @@
 from random import randint
-
+from utility import get_integer_input
 def main():
     number_input = ''
     SIZE_OF_LIST = ''
@@ -15,14 +15,14 @@ def enter_list_size():
     size_variable = get_integer_input()
     return size_variable
 
-def get_integer_input():
-    user_variable = ''
-    while True:
-        try:
-            user_variable = int(input('Enter a numeric value: '))
-            return user_variable
-        except ValueError:
-            print('That was not a valid number. Try again. . .')
+# def get_integer_input():
+#     user_variable = ''
+#     while True:
+#         try:
+#             user_variable = int(input('Enter a numeric value: '))
+#             return user_variable
+#         except ValueError:
+#             print('That was not a valid number. Try again. . .')
     
     
 def generate_random_numbers(LIST_SIZE):
@@ -36,15 +36,13 @@ def generate_random_numbers(LIST_SIZE):
 
 def display_larger_than_n(number_list,user_number):
     output_list = []
-    print('printing numbers larger than ' + str(user_number))
-    string_of_numbers_larger_than_user_input = ''
+    print('printing numbers larger than ' + str(user_number) + ":")
     for number in number_list:
         if number > user_number:
-            output_list.insert(number,str(number))
+            print(str(number),end=' ')
+    print('\n')
     print('original list is: ' + str(number_list))
     print('\n')
-    print('now displaying all numbers larger in list: \n')
-    print(str(output_list))
 
 
 main()
