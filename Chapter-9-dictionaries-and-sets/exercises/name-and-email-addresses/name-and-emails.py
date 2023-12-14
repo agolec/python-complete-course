@@ -14,6 +14,7 @@ Each time the program starts, it should retrieve the dictionary from file and un
 
 import re
 import pickle
+import os
 
 LOOK_UP_NAME_EMAIL_PAIR = 'LOOK UP'
 ADD_NEW_NAME_EMAIL_PAIR = 'ADD'
@@ -21,12 +22,12 @@ CHANGE_EXISTING_EMAIL = 'CHANGE'
 DELETE_EXISTING_NAME_EMAIL_PAIR = 'DELETE'
 QUIT = 'QUIT'
 
+CURRENT_DIRECTORY = os.getcwd() + '\\Chapter-9-dictionaries-and-sets\\exercises\\name-and-email-addresses\\'
 def main():
     
     names_and_emails = unpickle()
 
-    user_menu_selection = get_menu_choice()
-    process_choice(user_menu_selection,names_and_emails)
+    process_choice(names_and_emails)
 
 def get_menu_choice():
     print_menu()
@@ -51,11 +52,12 @@ def print_menu():
     print('Type ADD to add a name and email.')
     print('Type CHANGE to modify an existing email.')
     print('Type DELETE to delete an existing email.')
+    print('Type QUIT to quit program')
     print()
 
-def process_choice(choice,name_and_emails):
+def process_choice(name_and_emails):
+    choice = get_menu_choice()
     while (choice not in QUIT):
-
         if choice == LOOK_UP_NAME_EMAIL_PAIR:
             look_up(name_and_emails)
         elif choice == ADD_NEW_NAME_EMAIL_PAIR:
@@ -64,11 +66,11 @@ def process_choice(choice,name_and_emails):
             change_email(name_and_emails)
         elif choice == DELETE_EXISTING_NAME_EMAIL_PAIR:
             delete_email(name_and_emails)
-    repickle(name_and_emails)
+        choice = get_menu_choice()
+    serialize(name_and_emails)
 
 def look_up(name_email_dictionary):
     name = input('Enter a name to look up')
-
     print(name_email_dictionary.get(name,'Name not found'))
 
 def add_to_email_dict(name_email_dictionary):
@@ -105,11 +107,12 @@ def valid_email(email_entry):
         return True
     else:
         return False
+    
 def unpickle():
     name_and_emails = {}
     end_of_file = False
 
-    input_file = open('names_and_emails.dat', 'rb')
+    input_file = open(CURRENT_DIRECTORY + 'emails.dat', 'rb')
 
     while not end_of_file:
         try:
@@ -119,7 +122,7 @@ def unpickle():
     input_file.close()
     return name_and_emails
 
-def repickle(name_and_emails):
-    output_file = open('names_and_emails.dat','wb')
+def serialize(name_and_emails):
+    output_file = open(CURRENT_DIRECTORY + 'emails.dat','wb')
     pickle.dump(name_and_emails,output_file)
 main()
